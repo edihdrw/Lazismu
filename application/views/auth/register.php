@@ -81,7 +81,7 @@
                     <div class="mt-3 d-flex">
                         <div>
                             <p class="m-1">
-                                <a href="forgot-password.html">Lupa password</a>
+                                <a href="<?php echo base_url();  ?>auth/reset" class="text-info">Lupa password</a>
                             </p>
                         </div>
                         |

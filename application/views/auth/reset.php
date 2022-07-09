@@ -30,9 +30,9 @@
                     </div>
                     <p class="login-box-msg"> <?= $this->session->flashdata('message'); ?></p>
 
-                    <form action="<?= base_url(); ?>auth" method="post">
+                    <form action="<?= base_url(); ?>auth/reset" method="post">
                         <div class="input-group mb-3">
-                            <input name="email" type="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
+                            <input name="email" type="email" class="form-control" placeholder="Email">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -40,19 +40,11 @@
                             </div>
                         </div>
                         <small class="text-danger"><?= form_error('email'); ?></small>
-                        <div class="input-group mb-3">
-                            <input name="password" type="password" class="form-control" placeholder="Password">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                        </div>
 
 
                         <!-- /.col -->
                         <div>
-                            <button type="submit" class="btn btn-outline-info btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-outline-info btn-block">Reset Password</button>
                         </div>
 
                         <!-- /.col -->
@@ -61,11 +53,9 @@
 
                     <!-- /.social-auth-links -->
                     <div class="mt-3">
-                        <p class="mb-1">
-                            <a href="<?php echo base_url();  ?>auth/reset" class="text-info">Lupa password</a>
-                        </p>
+
                         <p class="mb-0">
-                            <a href="<?php echo base_url();  ?>auth/register" class="text-center text-info">Buat akun</a>
+                            <a href="<?php echo base_url();  ?>auth" class="text-center text-info">Login</a>
                         </p>
                     </div>
                 </div>

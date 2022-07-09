@@ -28,20 +28,22 @@
                         <!-- <a href="index2.html"><b>Lazis</b>MU</a> -->
                         <img style="width: 50%;" src="<?= base_url() ?>assets/img/Lazizmu.png" alt="">
                     </div>
-                    <p class="login-box-msg"> <?= $this->session->flashdata('message'); ?></p>
+                    <p class="text-dark text-center"> <?= $this->session->userdata('reset_email'); ?></p>
+                    <hr>
 
-                    <form action="<?= base_url(); ?>auth" method="post">
+                    <form action="<?= base_url(); ?>auth/gantiPassword" method="post">
                         <div class="input-group mb-3">
-                            <input name="email" type="email" class="form-control" placeholder="Email" value="<?= set_value('email'); ?>">
+                            <input name="password1" id="passoword1" type="password" class="form-control" placeholder="Password baru">
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
+                                    <span class="fas fa-lock"></span>
                                 </div>
                             </div>
                         </div>
-                        <small class="text-danger"><?= form_error('email'); ?></small>
+                        <small class="text-danger"><?= form_error('password1'); ?></small>
+
                         <div class="input-group mb-3">
-                            <input name="password" type="password" class="form-control" placeholder="Password">
+                            <input name="password2" id="passoword2" type="password" class="form-control" placeholder="Ulangi password">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -52,22 +54,13 @@
 
                         <!-- /.col -->
                         <div>
-                            <button type="submit" class="btn btn-outline-info btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-outline-info btn-block">ganti Password</button>
                         </div>
 
                         <!-- /.col -->
 
                     </form>
 
-                    <!-- /.social-auth-links -->
-                    <div class="mt-3">
-                        <p class="mb-1">
-                            <a href="<?php echo base_url();  ?>auth/reset" class="text-info">Lupa password</a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="<?php echo base_url();  ?>auth/register" class="text-center text-info">Buat akun</a>
-                        </p>
-                    </div>
                 </div>
                 <!-- /.login-card-body -->
             </div>
