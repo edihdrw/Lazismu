@@ -6,7 +6,7 @@ class DistribusiUser extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_admin');
+        $this->load->model('m_admin'); 
         $this->load->model('wilayah');
         $this->load->model('distribusi_m');
         $this->load->model('manfaat_m');
@@ -142,6 +142,7 @@ class DistribusiUser extends CI_Controller
     public function tambah_distribusi()
     {
         if ($this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 1) {
+            $lazismu = $this->input->post('lazismu');
             $kegiatan = $this->input->post('kegiatan');
             $id_user = $this->input->post('id_user');
             $program = $this->input->post('program');
@@ -174,6 +175,7 @@ class DistribusiUser extends CI_Controller
                     redirect('distribusiuser/index');
                 } else {
                     $data = [
+                        'lazismu' => $lazismu,
                         'kegiatan' => $kegiatan,
                         'program' => $program,
                         'dana' => $dana,
@@ -202,6 +204,7 @@ class DistribusiUser extends CI_Controller
                 }
             } else {
                 $data = [
+                    'lazismu' => $lazismu,
                     'kegiatan' => $kegiatan,
                     'program' => $program,
                     'dana' => $dana,
@@ -243,6 +246,7 @@ class DistribusiUser extends CI_Controller
     {
         if ($this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 1) {
             $id_dis = $this->input->post('id_dis');
+            $lazismu = $this->input->post('lazismu');
             $kegiatan = $this->input->post('kegiatan');
             $program = $this->input->post('program');
             $dana = $this->input->post('dana');
@@ -262,6 +266,7 @@ class DistribusiUser extends CI_Controller
 
             if (empty($gambar['name'])) {
                 $data = [
+                    'lazismu' => $lazismu,
                     'kegiatan' => $kegiatan,
                     'program' => $program,
                     'dana' => $dana,
@@ -301,6 +306,7 @@ class DistribusiUser extends CI_Controller
                     $f = $this->db->select('gambar')->get_where('tb_distribusi', ['id_dis' => $id_dis])->row();
                     unlink('./uploads/' . $f->gambar);
                     $data = [
+                        'lazismu' => $lazismu,
                         'kegiatan' => $kegiatan,
                         'program' => $program,
                         'dana' => $dana,

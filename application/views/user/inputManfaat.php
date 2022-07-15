@@ -4,6 +4,7 @@
 
             <!-- /.card-header -->
             <div class="card-body">
+                <p class="login-box-msg"> <?= $this->session->flashdata('message'); ?></p>
                 <form method="post" action="<?php echo base_url(); ?>manfaatuser/tambah_manfaat">
                     <input name="id_user_m" type="hidden" class="form-control" value="<?= $user['id']; ?>">
 

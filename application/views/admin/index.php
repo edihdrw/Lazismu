@@ -302,10 +302,11 @@
                                         <td><?= $dn['dana'] ?></td>
                                         <td>
                                             <?php
+
                                             $total_saluran = 0;
 
-                                            foreach ($distribusi as $dis) {
 
+                                            foreach ($distribusi as $dis) {
 
                                                 if ($dn['dana'] == $dis['dana']) {
 
@@ -313,13 +314,12 @@
                                                     $total_saluran += $totalProg;
                                                 }
                                             }
-                                            ?>
 
-
-
-
-                                            <?php echo round((($total_saluran / $total_dana) * 100), 1)
-
+                                            if ($total_dana == 0) {
+                                                echo 0;
+                                            } else {
+                                                echo round((($total_saluran / $total_dana) * 100), 1);
+                                            }
                                             ?>
                                             <span>%</span>
                                         </td>

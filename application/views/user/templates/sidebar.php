@@ -166,7 +166,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link
+                    <a href="<?php echo base_url(); ?>bukuuser" class="nav-link
                      <?php if ($this->uri->segment('1') == 'bukuuser') {
                             echo 'active';
                         } ?>">

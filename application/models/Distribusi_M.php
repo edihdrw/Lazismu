@@ -6,7 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class distribusi_m extends CI_Model
 {
-    // CRUD
+    // CRUD 
     public function lihat()
     {
         $this->db->select('*');
@@ -17,7 +17,13 @@ class distribusi_m extends CI_Model
         $this->db->join('kecamatan', 'tb_distribusi.kecamatan= kecamatan.id_kec');
         $this->db->join('desa', 'tb_distribusi.desa= desa.id_desa');
         return $this->db->get('');
+        // if ($query->num_rows() > 0) {
+        //     return $query;
+        // } else {
+        //     return 0;
+        // }
     }
+
 
     public function dana_sum()
     {

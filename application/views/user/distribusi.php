@@ -253,6 +253,12 @@
 
                     <div class="card-body">
                         <div class="form-group">
+                            <label for="inputDescription">Lazismu</label>
+                            <div class="input-group input-group-sm">
+                                <input name="lazismu" class="form-control" rows="4" placeholder="Masukan Nama Lazismu..."></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputDescription">Kegiatan</label>
                             <div class="input-group input-group-sm">
                                 <textarea name="kegiatan" class="form-control" rows="4" placeholder="Masukan Nama Kegiatan..."></textarea>
@@ -441,7 +447,7 @@
             <div class="modal-content">
 
                 <div class="modal-header bg-info text-light">
-                    <h5 class="modal-title" id="ModalLabel">Tambah Distribusi</h5>
+                    <h5 class="modal-title" id="ModalLabel">Edit Distribusi</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -452,6 +458,13 @@
                     <form action="<?php echo base_url(); ?>distribusiuser/edit_distribusi" method="post" enctype="multipart/form-data">
 
                         <div class="card-body">
+                            <div class="form-group">
+                                <input type="hidden" name="id_dis" value="<?= $dis['id_dis'] ?>">
+                                <label for="inputDescription">Lazismu</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="lazismu" class="form-control" rows="4" placeholder="Masukan Nama lazismu..." value="<?= $dis['lazismu'] ?>"></input>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <input type="hidden" name="id_dis" value="<?= $dis['id_dis'] ?>">
                                 <label for="inputDescription">Kegiatan</label>
